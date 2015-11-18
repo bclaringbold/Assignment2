@@ -36,6 +36,32 @@ router.post('/login', passport.authenticate('local-login', {
 }));
 
 
+/* Show Registration Page */
+/*
+router.get('/register', function (req, res, next) {
+    if (!req.user) {
+        res.render('register', {
+            title: 'Register',
+            messages: req.flash('registerMessage'),
+            displayName: req.user ? req.user.displayName : ''
+        });
+    }
+    else {
+        return res.redirect('/');
+    }
+});
+*/
+
+/* POST signup data. */
+/*
+router.post('/register', passport.authenticate('local-registration', {
+    //Success go to Profile Page / Fail go to Signup page
+    successRedirect : '/users',
+    failureRedirect : '/register',
+    failureFlash : true
+}));
+*/
+
 /* Process Logout Request */
 router.get('/logout', function (req, res){
   req.logout();

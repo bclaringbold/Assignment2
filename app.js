@@ -20,8 +20,10 @@ mongoose.connection.on('error', function() {
 });
 
 // Route Alias
-var routes =    require('./routes/index');
-var users =     require('./routes/users');
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var contacts = require('./routes/contacts');
+
 //var register =  require('./routes/register');
 
 var app = express();
@@ -54,7 +56,9 @@ app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
-//app.use('/register', register);
+app.use('/contacts', contacts);
+
+//app.use('/cregister', register);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
