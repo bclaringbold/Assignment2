@@ -24,13 +24,13 @@ router.get('/login', function (req, res, next) {
         });
     }
     else {
-        return res.redirect('/users');
+        return res.redirect('/contacts');
     }
 });
 
 /* Process the Login Request */
 router.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/users',
+    successRedirect: '/contacts',
     failureRedirect: '/login',
     failureFlash: true
 }));
