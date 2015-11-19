@@ -3,24 +3,20 @@
     <h1>Edit a Contact</h1>
     <div class="col-sm-4">
         <form method="post">
+
+            <fieldset class="form-group">
+                <label for="displayName">Display Name: *</label>
+                <input name="displayName" type="text" class="form-control" required value="<%= contacts.displayName %>"/>
+            </fieldset>
             <fieldset class="form-group">
                 <label for="email">Email: *</label>
                 <input name="email" type="email" class="form-control" required value="<%= contacts.email %>" autofocus />
             </fieldset>
             <fieldset class="form-group">
-                <label for="displayName">Display Name: *</label>
-                <input name="displayName" type="text" class="form-control" required value="<%= contacts.displayName %>"/>
+                <label for="contactNumber">Telephone Number: *</label>
+                <input name="contactNumber" type="tel" class="form-control" value="<%= contacts.contactNumber %>" required autofocus />
             </fieldset>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+                    
             
             <fieldset class="form-group text-right">
                 <button type="submit" class="btn btn-primary" title="Update">

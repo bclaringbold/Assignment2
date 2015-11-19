@@ -10,6 +10,7 @@ var Schema = mongoose.Schema;
 var ContactSchema = new Schema({
 	email: String,
 	displayName: String,
+	contactNumber: String,
 	salt: String,
 	created: Number,
 	updated: Number

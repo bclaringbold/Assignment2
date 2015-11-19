@@ -13,6 +13,7 @@
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Telephone Number</th>
                         <th>Date Created</th>
                         <th>Date Updated</th>
                         <th></th>
@@ -26,6 +27,9 @@
                     </td>
                     <td>
                         <%= contacts[i].email %>
+                    </td>
+                    <td>
+                        <%= contacts[i].contactNumber %>
                     </td>
                     <td>
                         <% var date = new Date(contacts[i].created);

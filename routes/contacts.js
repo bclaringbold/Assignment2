@@ -45,6 +45,7 @@ router.post('/add', requireAuth, function (req, res, next) {
     Contacts.create({
         email: req.body.email,
         displayName: req.body.displayName,
+        contactNumber: req.body.contactNumber,
         created: Date.now(),
         updated: Date.now()
     }, function (err, User) {
