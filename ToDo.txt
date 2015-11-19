@@ -2,9 +2,6 @@ NEED
 
 fix contacts view 
 - list alphabetically
-- view table for conacts will only print - contact Name, Contact Number and Email Address
-- fix dataset to have new field - contact numer
-- add contact number to edit field
 
 documentation
 
