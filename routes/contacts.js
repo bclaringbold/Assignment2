@@ -15,7 +15,24 @@ function requireAuth(req, res, next){
   next();
 }
 
-/* Render Contacts main page. */
+/* Render Contacts main page. With sort on Display Name*/
+router.get('/', requireAuth, function (req, res, next) {
+    Contacts.find({}, null, {sort: {displayName: 1}}, function (err, contacts) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.render('contacts/index', {
+                title: 'Contacts',
+                contacts: contacts,
+                displayName: req.user ? req.user.displayName : ''
+            });
+        }
+    });
+});
+
+/* Render Contacts main page. 
 router.get('/', requireAuth, function (req, res, next) {
     Contacts.find(function (err, contacts) {
         if (err) {
@@ -30,7 +47,8 @@ router.get('/', requireAuth, function (req, res, next) {
             });
         }
     });
-});
+});*/
+
 
 /* Render the Add Contacts Page */
 router.get('/add', requireAuth, function (req, res, next) {
